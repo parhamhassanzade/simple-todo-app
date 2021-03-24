@@ -1,6 +1,5 @@
 let notes = [];
 let counter = 1;
-
 //*create element
 let render = function (note) {
   let div = document.querySelector(".diveparent");
@@ -34,8 +33,13 @@ let render = function (note) {
 document.querySelector("#nameform").addEventListener("submit", function (e) {
   e.preventDefault();
   notes.push({
+    id:uuidv4(),
     title: e.target.elements.inputText.value,
   });
   render(notes[counter - 1]);
   e.target.elements.inputText.value = "";
 });
+
+
+
+//todo=>fix the chek box and the text elemeent(replace it to span)
